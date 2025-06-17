@@ -2,9 +2,10 @@
 June 14 2025
 
 # Running the Program
-On command line execute the server file first:
-    prompting python3 myvlserver.py
-    then python3 myvlclient.py
+Open two terminal windows - server must run before client 
+In the first window run python3 myvlserver.py
+In the second window run python3 myvlclient.py
+When prompted enter a lowercase sentence 
 
 # Server Execution Example 
 Bushras-MacBook-Air:a1 bushraasif$ python3 myvlserver.py
