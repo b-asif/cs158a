@@ -1,5 +1,4 @@
 from socket import *
-import struct
 
 # Port number 
 serverPort = 12000
@@ -18,7 +17,8 @@ while True:
     
     # The first two bytes of the string is the length of the string
     stringLength = connectedSocket.recv(2)
-    # Converting from 2 byte big-endian to int value  
+    # Converting from 2 byte big-endian to int value
+    # Manually converting 2 byte message length using bitwise operations  
     length = (stringLength[0] << 8) | stringLength[1]
     print(f"msg_length: ", length)
 
