@@ -1,28 +1,28 @@
 from socket import *
 
-# ip address 
+# IP address 
 serverName = 'localHost'
-# port number
+# Port number
 serverPort = 12000
-# tcp socket 
+# TCP socket 
 clientSocket = socket(AF_INET, SOCK_STREAM)
 
-# connect the client socket to the server address and port 
+# Connect the client socket to the server address and port 
 clientSocket.connect((serverName, serverPort))
 
-# prompt the user to enter a sentence 
+# Prompt the user to enter a sentence 
 sentence = input('Input lowercase sentence: ')
 
-# encoding converts from string to bytes 
-# sending from client socket to server socket 
+# Encoding converts from string to bytes 
+# Sending from client socket to server socket 
 userSentence = sentence.encode('utf-8')
 
-# retrieve the length of the message 
+# Retrieve the length of the message 
 msglength = len(userSentence)
 
-# converting the length 
+# Converting the length 
 stringLen = msglength.to_bytes(2, 'big')
-# send to server the string and length 
+# Send to server the string and length 
 clientSocket.sendall(stringLen + userSentence)
 
 
