@@ -39,11 +39,12 @@ def handle_message(clientSocket, addr):
                 # Message should not be relayed to sender 
                 if(client != clientSocket):
                     client.send(f"{addr[1]}: {clientMsg}".encode())
+            print(f"{addr[1]}: {clientMsg}")
 
 while True:
     connectedSocket, addr = serverSocket.accept()
     print(f"Server listening on {addr[0]}")
-    print(f"New connection from {addr[0]}: {addr[1]}")
+    print(f"New connection from {addr[0]}:{addr[1]}")
 
     with clientLock:
         # Adding clients to server list 
