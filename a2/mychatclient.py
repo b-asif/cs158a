@@ -24,8 +24,7 @@ def receive_msg():
                 print(f"\n{receivedMsg}")
             else:
                 break
-        except:
-            # If anything breaks the connection break 
+        except: 
             break
 
 
