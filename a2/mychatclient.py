@@ -16,14 +16,21 @@ clientSocket.connect((serverName, serverPort))
 # Each client establishes a TCP connection and recieves messages from server 
 def receive_msg():
     while True:
-        receivedMsg = clientSocket.recv(1024).decode()
-        if receivedMsg:
-            print(f"\n{receivedMsg}")
-        else:
+        try:
+            # Recieve up to 1024 bytes from the sender 
+            receivedMsg = clientSocket.recv(1024).decode()
+            # If message recieved print to console 
+            if receivedMsg:
+                print(f"\n{receivedMsg}")
+            else:
+                break
+        except:
+            # If anything breaks the connection break 
             break
 
 
 print("Connected to chat server. Type 'exit' to leave.")
+# Creating a new thread 
 threading.Thread(target=receive_msg).start()
 
 # Client sending message to server 

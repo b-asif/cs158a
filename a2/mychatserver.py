@@ -3,6 +3,8 @@ import threading
 
 # Establishing port number
 serverPort = 12000
+# Server host number 
+serverHost = ''
 
 serverSocket = socket(AF_INET, SOCK_STREAM) # TCP connection 
 
@@ -10,10 +12,14 @@ serverSocket = socket(AF_INET, SOCK_STREAM) # TCP connection
 serverSocket.bind(('', serverPort))
 serverSocket.listen(100)
 
+hostIP = gethostbyname(gethostname())
+print(f"Server listening on {hostIP}:{serverPort}")
+
 # list of connected clients 
 connectedClients = []
 # To avoid race condition, each client can only use print resource one at a time
 clientLock = threading.Lock()
+
 
 # Function to handle client message 
 def handle_message(clientSocket, addr):
@@ -43,9 +49,8 @@ def handle_message(clientSocket, addr):
 
 while True:
     connectedSocket, addr = serverSocket.accept()
-    print(f"Server listening on {addr[0]}")
-    print(f"New connection from {addr[0]}:{addr[1]}")
-
+    print(f"New connection from {addr}")
+    
     with clientLock:
         # Adding clients to server list 
         connectedClients.append(connectedSocket)
