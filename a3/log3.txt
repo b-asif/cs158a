@@ -1,0 +1,5 @@
+Sent: uuid=eb9d3dbb-8ac3-4695-8d3e-8b5f1c933a73, flag=0
+Received: uuid=eb9d3dbb-8ac3-4695-8d3e-8b5f1c933a73, flag=0, same, 0
+Leader is decided to eb9d3dbb-8ac3-4695-8d3e-8b5f1c933a73.
+Sent: uuid=eb9d3dbb-8ac3-4695-8d3e-8b5f1c933a73, flag=1
+Received: uuid=eb9d3dbb-8ac3-4695-8d3e-8b5f1c933a73, flag=1, same, 1
