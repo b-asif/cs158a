@@ -1,0 +1,5 @@
+Received: uuid=cb1d3d91-8a13-475a-8204-bc2085f1868e, flag=0, greater, 0
+Sent: uuid=cb1d3d91-8a13-475a-8204-bc2085f1868e, flag=0
+Received: uuid=cb1d3d91-8a13-475a-8204-bc2085f1868e, flag=1, greater, 0
+Leader is decided to cb1d3d91-8a13-475a-8204-bc2085f1868e.
+Sent: uuid=cb1d3d91-8a13-475a-8204-bc2085f1868e, flag=1
